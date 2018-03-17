@@ -6,5 +6,5 @@ This script allows you to schedule a reboot of your AT&T U-verse router (Tested 
 
 Inside reboot.js edit the following two values.
 
-var routerAccessCode = "";
-var routerIP = "192.168.1.254";
+var routerAccessCode = ""; 
+var routerIP = "192.168.1.254"; 
