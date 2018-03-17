@@ -5,7 +5,7 @@ This script allows you to schedule a reboot of your AT&T U-verse router (Tested 
 # Intallation
 
 - Clone repo to your server
-- Schedule "node reboot.js" via crontab
+- Schedule "node reboot.js" via crontab, PM2 etc.
 
 # Configuration
 
