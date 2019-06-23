@@ -62,11 +62,14 @@ function doRestart(cookieJar, nonce){
     }, function (err, res, body) { 
 
         if (err) {
-            console.log('Failed Reboot.');            
+            console.log('Failed Reboot.');  
+            process.exit(0);
             return;
         }
 
         console.log('Router Rebooting.');  
+        process.exit(0);
+        return;
 
     });
 
