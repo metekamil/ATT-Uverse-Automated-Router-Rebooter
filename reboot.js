@@ -27,8 +27,13 @@ function RebootRouter() {
         jar: cookieJar,
         body: formData,
         method: 'POST'
-    }, function (err, res, body) { 
-        
+    }, function (err, res, body) {
+
+        if (body===undefined) {
+            console.log('Did not detect your gateway, please make sure you have specified your router IP using routerIP on line 4 inside reboot.js')
+            return;
+        }
+
         var nonce=body.substr(body.indexOf("NONCE")).toLowerCase();
         nonce=nonce.substr(nonce.indexOf("value=")+7);
         nonce=nonce.substr(0,nonce.indexOf("\"")); 
@@ -72,7 +77,6 @@ function doRestart(cookieJar, nonce){
         return;
 
     });
-
 }
  
 RebootRouter();
