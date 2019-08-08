@@ -45,7 +45,7 @@ function RebootRouter() {
 function doRestart(cookieJar, nonce){
 
     var form = {
-        "RESET_BB" : 'Restart',
+        "RESET_BB" : 'Reset',
         "THISPAGE" : 'A_0_0',
         "NEXTPAGE" : 'A_0_0_POST',
         "NONCE": nonce,
