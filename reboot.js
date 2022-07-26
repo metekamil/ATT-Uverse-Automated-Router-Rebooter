@@ -1,21 +1,25 @@
 /* Fill in the access code and your router IP below */
-var routerAccessCode = "put_your_router_access_code_here";
+
+var routerAccessCode = "EnterRouterAccessCodeHere";
 var routerIP = "192.168.1.254";
+
 /****************************************************/
 
 var querystring = require('querystring');
 var request = require('request');
+var PAGE = 'C_5_7';
 
 function RebootRouter() {
 
     var form = {
-        "ADM_PASSWORD" : routerAccessCode,
-        "NEXTPAGE" : 'A_0_0'
+        "ADM_PASSWORD" : routerAccessCode
+        "NEXTPAGE" : PAGE
     };
 
     var formData = querystring.stringify(form);
     var contentLength = formData.length;
     var cookieJar = request.jar();
+
     request({
 
         headers: {
@@ -45,9 +49,7 @@ function RebootRouter() {
 function doRestart(cookieJar, nonce){
 
     var form = {
-        "RESET_BB" : 'Reset',
-        "THISPAGE" : 'A_0_0',
-        "NEXTPAGE" : 'A_0_0_POST',
+        "RESTART" : 'Reset',
         "NONCE": nonce,
         "CMSKICK": ""
     };
@@ -59,7 +61,7 @@ function doRestart(cookieJar, nonce){
             'Content-Length': contentLength,
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        uri: 'http://' + routerIP + '/xslt?PAGE=A_0_0_POST&NEXTPAGE=A_0_0_POST',
+        uri: 'http://' + routerIP + '/xslt?PAGE=' + PAGE + '_POST&NEXTPAGE=' + PAGE + '_POST',
         jar: cookieJar,
         body: formData,
         method: 'POST'
