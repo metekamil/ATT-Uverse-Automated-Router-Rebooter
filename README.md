@@ -16,3 +16,7 @@ Inside reboot.js edit the following two values.
 
 var routerAccessCode = "";  
 var routerIP = "192.168.1.254";  
+
+Additional code changes have been made to reference the THISPAGE & NEXTPAGE value as a variable called PAGE.
+
+For a broadband restart, the code can be easily be modified to change RESTART to RESET_BB, and change the value of the PAGE variable from C_5_7 back to A_0_0 if needed.
