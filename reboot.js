@@ -12,7 +12,7 @@ var PAGE = 'C_5_7';
 function RebootRouter() {
 
     var form = {
-        "ADM_PASSWORD" : routerAccessCode
+        "ADM_PASSWORD" : routerAccessCode,
         "NEXTPAGE" : PAGE
     };
 
